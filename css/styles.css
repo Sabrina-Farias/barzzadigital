@@ -1,0 +1,280 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES */
+body {
+    background-image: url(../img/img_fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat:repeat ;
+    background-attachment: fixed;
+}
+
+/* ESTILO NAV */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.navbar__logo img {
+    width: 40%;
+    height: auto;
+    margin: 50px;
+}
+
+.navbar__pages {
+    display: flex;
+    list-style: none;
+    gap: 70px;
+    margin: 50px;
+}
+
+.navbar__link {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.5em;
+    padding: 10px;
+    color: #3e3f3f;
+}
+
+/* ESTILO SECCIÓN INTRODUCCIÓN */
+.section__intro {
+    display: flex;
+    align-items: flex-end;
+    margin: 40px;
+}
+
+.intro__title {
+    width: 45%;
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+h1 span {
+    font-size: 2.5rem;
+    color: #f19300;
+}
+
+.intro__text {
+    width: 55%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* ESTILO SECCIÓN SERVICIOS */
+.section__services {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.services__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #3e3f3f;
+    text-align: center;
+}
+
+.services__cards {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.cards {
+    text-align: center;
+    padding: 20px;
+}
+
+.cards h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin: 10px;
+    color: #f19300;
+}
+
+.cards p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 10px;
+    color: #3e3f3f;
+}
+
+/* ESTILO SECCIÓN PORTFOLIO */
+.section__portfolio {
+    display: flex;
+    padding: 40px;
+}
+
+.section__portfolio__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: left;
+}
+
+.section__portfolio__text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.section__portfolio__button {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #f19300;
+    padding: 20px 50px;
+    border-radius: 50px;
+}
+
+/* ESTILO SECCIÓN CLIENTES */
+.section__clients {
+    background-color: #f19300;
+    padding: 40px;
+}
+
+.section__clients__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.section__clients__logos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px;
+}
+
+.section__clients__button {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #3e3f3f;
+    padding: 20px 50px;
+    border-radius: 50px;
+}
+
+/* ESTILO SECCIÓN CONTACTANOS */
+.section__contact {
+    padding: 80px;
+}
+
+.section__contact__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section__contact__button {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #f19300;
+    padding: 20px 50px;
+    border-radius: 50px;
+}
+
+/* ESTILO FOOTER */
+footer {
+    background-color: #fff;
+    display: flex;
+    padding: 80px;
+}
+
+.footer__section__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #f19300;
+    margin-bottom: 15px;
+}
+
+.footer__section {
+    width: 25%;
+}
+
+.footer__section__list--horizontal {
+    list-style: none;
+    display: flex;
+    gap:10px;
+}
+
+.footer__section__list--horizontal img {
+    width: 40px;
+    height: auto;
+}
+
+.footer__section__list--vertical {
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.footer__section__list--vertical img {
+    width: 25px;
+    height: auto;
+    align-items: center;
+}
+
+.footer__section__list--vertical li {
+    margin-top: 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+}
+
+.footer__section__note {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #3e3f3f;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* ESTILO PAGE ABOUT US | NUESTRO EQUIPO */
+.section__equipo {
+    background-color: #f19300;
+    padding: 40px;
+}
+
+.section__equipo__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+
