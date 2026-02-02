@@ -1,80 +1,112 @@
-/* RESET */
+/* ---- RESET ---- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ESTILOS GENERALES */
+/* ---- ESTILOS GENERALES ---- */
 body {
     background-image: url(../img/img_fondo.png);
     background-size: cover;
     background-position: center;
-    background-repeat:repeat ;
+    background-repeat:repeat;
     background-attachment: fixed;
 }
 
-/* ESTILO NAV */
-.navbar {
-    display: flex;
+/* ---- ESTILO HEADER ---- */
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
+    padding: 40px;
     background-color: #fff;
+    
 }
 
-.navbar__logo img {
-    width: 40%;
-    height: auto;
-    margin: 50px;
+.header__logo img {
+    max-height: 40px;
+    width: auto;
 }
 
-.navbar__pages {
+.header__navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__navbar__pages {
     display: flex;
     list-style: none;
     gap: 70px;
-    margin: 50px;
 }
 
-.navbar__link {
+.header__navbar__link {
     font-family: "Montserrat", sans-serif;
     text-decoration: none;
     font-weight: 400;
-    font-size: 1.5em;
-    padding: 10px;
+    font-size: 1.4em;
     color: #3e3f3f;
+    padding: 10px 25px;
+    border-top: 2.5px solid transparent;
 }
 
-/* ESTILO SECCIÓN INTRODUCCIÓN */
-.section__intro {
-    display: flex;
-    align-items: flex-end;
-    margin: 40px;
+.header__navbar__link--activo {
+    border-top-color: #e8e8e8;
+}
+
+.header__navbar__link:hover {
+    border-top-color:#3e3f3f;
+}
+
+.header__navbar__link:focus-visible,.header__navbar__link:active {
+    background-color: #e8e8e8;
+}
+
+/* ---- ESTILO SECCIÓN INTRODUCCIÓN ---- */
+.intro {
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr );
+    padding: 80px 50px;
+    column-gap: 30px;
 }
 
 .intro__title {
-    width: 45%;
     font-family: "Days One", sans-serif;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    align-self: center;
     color: #fff;
 }
 
-h1 span {
-    font-size: 2.5rem;
+.intro__title span {
+    display: block;
+}
+
+.hashtag {
+    font-size: 6rem;
+    margin-bottom: -10px;
     color: #f19300;
 }
 
 .intro__text {
-    width: 55%;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    align-self: end;
     color: #fff;
+    padding-bottom: 5px;
 }
 
-/* ESTILO SECCIÓN SERVICIOS */
-.section__services {
+.intro__text p + p {
+    margin-top: 20px;
+}
+
+/* ---- ESTILO SECCIÓN SERVICIOS ---- */
+.services {
     background-color: #fff;
-    padding: 40px;
+    padding: 50px;
 }
 
 .services__title {
@@ -86,39 +118,58 @@ h1 span {
 }
 
 .services__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0px 20px 0px;
+}
+
+.services__card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 30px;
-}
-
-.cards {
+    gap: 12px;
+    padding: 40px 30px;
+    border-radius: 15px;
     text-align: center;
-    padding: 20px;
+    box-shadow: 0px 0px 10px #e8e8e8;
 }
 
-.cards h3 {
+.services__card img {
+    width: 130px;
+}
+
+.services__card h3 {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
-    font-size: 1.8rem;
-    margin: 10px;
+    font-size: 1.7rem;
     color: #f19300;
 }
 
-.cards p {
+.services__card p {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    margin: 10px;
     color: #3e3f3f;
 }
 
-/* ESTILO SECCIÓN PORTFOLIO */
-.section__portfolio {
-    display: flex;
-    padding: 40px;
+/* ---- ESTILO SECCIÓN PORTFOLIO ---- */
+.portfolio {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 80px 0 80px 50px;
+    column-gap: 30px;
 }
 
-.section__portfolio__title {
+.portfolio__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 100%;
+}
+
+.portfolio__title {
     font-family: "Days One", sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
@@ -126,7 +177,7 @@ h1 span {
     text-align: left;
 }
 
-.section__portfolio__text {
+.portfolio__text {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -134,7 +185,7 @@ h1 span {
     margin-bottom: 60px;
 }
 
-.section__portfolio__button {
+.portfolio__button {
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -143,15 +194,115 @@ h1 span {
     background-color: #f19300;
     padding: 20px 50px;
     border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* ESTILO SECCIÓN CLIENTES */
-.section__clients {
+.portfolio__button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    background-color: #d97f00;
+}
+
+/* ---- SLIDER (NO ME SERVIA BOOTSTRAP PORQUE NO ERAN MULTI ITEM, ASI QUE ARME UN SLIDER CON AYUDA DEL CHAT :D) ---- */
+.portfolio__slider-wrapper {
+    overflow: hidden;
+}
+
+.portfolio__slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 7px;
+}
+
+/* ---- SCROLLBAR ---- */
+.portfolio__slider::-webkit-scrollbar {
+    height: 5px;
+}
+
+.portfolio__slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.portfolio__slider::-webkit-scrollbar-thumb {
     background-color: #f19300;
-    padding: 40px;
+    border-radius: 10px;
 }
 
-.section__clients__title {
+.portfolio__slider::-webkit-scrollbar-thumb:hover {
+    background-color: #f19300;
+}
+
+.portfolio__slider {
+    scrollbar-width: thin;
+    scrollbar-color: #f19300 transparent;
+}
+
+/* ---- "CARDS" ---- */
+.portfolio__slider__item {
+    flex: 0 0 auto;
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 360px;
+    border-radius: 140px;
+    border: 5px solid #f19300;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.portfolio__slider__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+
+/* ---- EFECTO HOVER ---- */
+.portfolio__slider__item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.portfolio__slider__item-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.portfolio__slider__item:hover img {
+    filter: brightness(0.85);
+}
+
+.portfolio__slider__item:hover::after,
+.portfolio__slider__item:hover .portfolio__slider__item-text {
+    opacity: 1;
+}
+
+/* ---- ESTILO SECCIÓN CLIENTES ---- */
+.clients {
+    background-color: #f19300;
+    padding: 90px 50px;
+}
+
+.clients__title {
     font-family: "Days One", sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
@@ -159,15 +310,46 @@ h1 span {
     text-align: center;
 }
 
-.section__clients__logos{
+/* ---- SLIDER LOGOS ---- */
+.clients__slider {
+    overflow: hidden;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.clients__slider-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-logos 40s linear infinite;
+}
+
+.clients__logo {
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    margin: 40px;
+    background-color: #fff;
+    padding: 10px 40px;
+    border-radius: 12px;
+    margin: 0 20px;
 }
 
-.section__clients__button {
+.clients__logo img {
+    max-height: 60px;
+    width: auto;
+    display: block;
+}
+
+@keyframes scroll-logos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.clients__button {
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -176,23 +358,35 @@ h1 span {
     background-color: #3e3f3f;
     padding: 20px 50px;
     border-radius: 50px;
+    display: block;
+    width: fit-content;
+    margin: 60px auto 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* ESTILO SECCIÓN CONTACTANOS */
-.section__contact {
-    padding: 80px;
+.clients__button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    background-color: #2f3030;
 }
 
-.section__contact__title {
+/* ---- ESTILO SECCIÓN CONTACTANOS ---- */
+.contact {
+    padding: 100px 50px;
+}
+
+.contact__title {
+    text-align: center;
+}
+
+.contact__title h2 {
     font-family: "Days One", sans-serif;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 5rem;
     color: #fff;
-    text-align: center;
-    margin-bottom: 50px;
 }
 
-.section__contact__button {
+.contact__button {
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -201,80 +395,104 @@ h1 span {
     background-color: #f19300;
     padding: 20px 50px;
     border-radius: 50px;
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* ESTILO FOOTER */
+.contact__button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    background-color: #d97f00;
+}
+
+/* ---- ESTILO FOOTER ---- */
 footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+    padding: 50px;
     background-color: #fff;
-    display: flex;
-    padding: 80px;
 }
 
-.footer__section__title {
+.footer__title {
     font-family: "Days One", sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
     color: #f19300;
-    margin-bottom: 15px;
 }
 
-.footer__section {
-    width: 25%;
-}
-
-.footer__section__list--horizontal {
-    list-style: none;
-    display: flex;
-    gap:10px;
-}
-
-.footer__section__list--horizontal img {
-    width: 40px;
-    height: auto;
-}
-
-.footer__section__list--vertical {
-    list-style: none;
+.footer__lista--vertical {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1rem;
 }
 
-.footer__section__list--vertical img {
-    width: 25px;
-    height: auto;
-    align-items: center;
-}
-
-.footer__section__list--vertical li {
+.footer__lista--vertical li {
     margin-top: 15px;
 }
 
-footer ul li a {
-    text-decoration: none;
+footer ul {
+    padding: 0;
+    margin: 0;
 }
 
-.footer__section__note {
+footer li {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f19300;
+}
+
+.footer__lista--horizontal {
+    display: flex;
+    gap:20px;
+}
+
+.footer__lista--horizontal img {
+    width: 40px;
+    height: auto;
+}
+
+.footer__lista--horizontal li {
+    transition: transform 0.3s ease;
+}
+
+.footer__lista--horizontal li:hover {
+    transform: scale(1.1);
+}
+
+.footer__copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
     font-family: "Days One", sans-serif;
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #3e3f3f;
-    text-align: left;
     text-transform: uppercase;
 }
 
-/* ESTILO PAGE ABOUT US | NUESTRO EQUIPO */
-.section__equipo {
-    background-color: #f19300;
-    padding: 40px;
+/* ---- ESTILO PAGE ABOUT US | NUESTRO EQUIPO ---- */
+.equipo {
+    background-color: #fff;
+    padding: 50px;
 }
 
-.section__equipo__title {
+.equipo__title {
     font-family: "Days One", sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
-    color: #fff;
+    color: #3e3f3f;
     text-align: center;
 }
-
 
