@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barzza | Sobre Nosotros</title>
+    <title>Barzza | Contacto</title>
     <link rel="shortcut icon" href="../img/img_favicon.png" type="png">
     <!---- LINK CSS ---->
     <link rel="stylesheet" href="../css/styles.css">
@@ -36,6 +36,61 @@
     </header>
 
     <main>
+<!---- SECCIÓN 1 CONTACTO | DESCRIPCIÓN ---->
+        <section class="intro">
+            <div class="intro__title">
+                <h1 aria-label="Contactate con nosotros">
+                    <span class="hashtag">#</span>
+                    <span>hablemos_</span>
+                </h1>
+            </div>
+            <div class="intro__text">
+                <p><strong>Contanos sobre tu proyecto!</strong></p>
+                <p>Recopilamos todos tus requisitos para estimar mejor tu proyecto y podemos generar una propuesta con costos y plazos claros.</p>
+            </div>
+        </section>
+
+<!---- SECCIÓN 2 CONTACTO | FORM ---->
+        <section class="contacto">
+            <div class="contacto__title">
+                <h2>
+                    dejanos tu mensaje:
+                </h2>
+            </div>
+            <form class="container formulario">
+                <div class="row g-2 mt-3">
+                    <div class="col-md-6 col-12 form-floating required">
+                        <input type="text" class="form-control" required name="nombre" id="nombre" placeholder="Tu nombre completo">
+                        <label for="nombre">Nombre y Apellido</label>
+                    </div>
+                    <div class="col-md-6 col-12 form-floating required">
+                        <input type="text" class="form-control" required name="nombre-empresa" id="nombre-empresa" placeholder="Nombre de tu Marca, Empresa o Proyecto">
+                        <label for="nombre-empresa">Marca, Empresa o Proyecto</label>
+                    </div>
+                </div>
+                <div class="row g-2 mt-1">
+                    <div class="col-md-6 col-12 form-floating required">
+                        <input type="email" class="form-control" required name="email" id="email" placeholder="Tu E-mail">
+                        <label for="email">E-mail</label>
+                        <small class="error">Campo inválido</small>
+                    </div>
+                    <div class="col-md-6 col-12 form-floating required">
+                        <input type="tel" class="form-control" inputmode="numeric" pattern="[0-9]*" required name="telefono" id="telefono" placeholder="Tu número de Teléfono o WhatsApp">
+                        <label for="telefono">Teléfono/WhatsApp</label>
+                        <small class="error">Campo inválido</small>
+                    </div>
+                </div>
+                <div class="row g-2 mt-1">
+                    <div class="col-12 form-floating required">
+                        <textarea class="form-control" required name="mensaje" id="mensaje" placeholder="Contanos de tu proyecto" style="height: 130px;"></textarea>
+                        <label for="mensaje">Mensaje</label>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button type="submit" class="btn-enviar btn-primary text-uppercase">Enviar</button>
+                </div>
+            </form>
+        </section>
     </main>
 
 <!---- INICIO DEL FOOTER---->
@@ -61,9 +116,9 @@
         <div class="footer__rrss">
             <p class="footer__title">seguinos</p>
             <ul class="footer__lista--horizontal">
-                <li><a href="https://www.instagram.com/barzza/"><img src="../img/icon_rrss_ig.png" alt="Ícono Instagram"></a></li>
-                <li><a href="https://www.facebook.com/barzzacomunicacion"><img src="../img/icon_rrss_fb.png" alt="Ícono Facebook"></a></li>
-                <li><a href="https://www.linkedin.com/company/barzza/"><img src="../img/icon_rrss_in.png" alt="Ícono LinkedIn"></a></li>
+                <li><a href="https://www.instagram.com/barzza/"><img src="../img/img_icon_rrss_ig.png" alt="Ícono Instagram"></a></li>
+                <li><a href="https://www.facebook.com/barzzacomunicacion"><img src="../img/img_icon_rrss_fb.png" alt="Ícono Facebook"></a></li>
+                <li><a href="https://www.linkedin.com/company/barzza/"><img src="../img/img_icon_rrss_in.png" alt="Ícono LinkedIn"></a></li>
             </ul>
         </div>
         <div class="footer__copyright">

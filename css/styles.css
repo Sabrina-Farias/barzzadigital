@@ -81,7 +81,15 @@ header {
 
 .intro__title span {
     display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp-intro 0.6s ease forwards;
 }
+
+.intro__title span:nth-child(1) {animation-delay:0s;}
+.intro__title span:nth-child(2) {animation-delay:0.3s;}
+.intro__title span:nth-child(3) {animation-delay:0.6s;}
+.intro__title span:nth-child(4) {animation-delay:0.9s;}
 
 .hashtag {
     font-size: 6rem;
@@ -97,10 +105,21 @@ header {
     align-self: end;
     color: #fff;
     padding-bottom: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp-intro 0.6s ease forwards;
+    animation-delay: 0.3s;
 }
 
 .intro__text p + p {
     margin-top: 20px;
+}
+
+@keyframes fadeUp-intro {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ---- ESTILO SECCIÓN SERVICIOS ---- */
@@ -120,7 +139,7 @@ header {
 .services__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 35px;
     margin: 30px 0px 20px 0px;
 }
 
@@ -128,11 +147,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
     gap: 12px;
     padding: 40px 30px;
-    border-radius: 15px;
+    border-radius: 40px;
     text-align: center;
-    box-shadow: 0px 0px 10px #e8e8e8;
+    box-shadow: 0px 0px 20px #e8e8e8;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.services__card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 20px #f1930020;
 }
 
 .services__card img {
@@ -240,7 +266,7 @@ header {
     scrollbar-color: #f19300 transparent;
 }
 
-/* ---- "CARDS" ---- */
+/* ---- CARDS ---- */
 .portfolio__slider__item {
     flex: 0 0 auto;
     position: relative;
@@ -320,7 +346,7 @@ header {
 .clients__slider-track {
     display: flex;
     width: max-content;
-    animation: scroll-logos 40s linear infinite;
+    animation: logos 35s linear infinite;
 }
 
 .clients__logo {
@@ -328,7 +354,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 10px 40px;
     border-radius: 12px;
     margin: 0 20px;
@@ -340,7 +366,7 @@ header {
     display: block;
 }
 
-@keyframes scroll-logos {
+@keyframes logos {
     from {
         transform: translateX(0);
     }
@@ -414,7 +440,7 @@ footer {
     gap: 40px;
     align-items: start;
     padding: 50px;
-    background-color: #fff;
+    background-color: #ffffffee;
 }
 
 .footer__title {
@@ -496,3 +522,438 @@ footer a:hover {
     text-align: center;
 }
 
+.equipo__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.equipo__card {
+    background-image: url(../img/img_fondo-cards.png);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 40px 30px;
+    display: flex;
+}
+
+.card--grande {
+    grid-column: span 2;
+    margin-top: 30px;
+    border-radius: 90px 180px 20px 90px;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.card--grande:hover, .card--chica:hover {
+    transform: scale(1.03);
+}
+
+.card--grande img, .card--chica img {
+    width: 180px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card--info {
+    display: flex;
+    flex-direction: column;
+}
+
+.equipo__card--info h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: #f19300;
+}
+
+.equipo__card--info p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #3e3f3f;
+}
+
+.equipo__card--info p + p {
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #3e3f3f;
+}
+
+.card--invertida {
+    flex-direction: row-reverse;
+    border-radius: 180px 90px 90px 20px;
+    text-align: right;
+}
+
+.card--chica {
+    flex-direction: column;
+    border-radius: 90px 90px 20px 90px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* ---- ESTILO PAGE CONTACTO ---- */
+.contacto {
+    background-color: #fff;
+    padding: 50px;
+}
+
+.contacto__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #3e3f3f;
+    text-align: center;
+}
+
+/* ---- ESTILO FORM ---- */
+.formulario .form-control {
+    border-radius: 20px;
+    border: 1px solid #3e3f3f;
+    font-family: "Montserrat", sans-serif;
+}
+
+.formulario .form-control:hover, .formulario .form-control:focus {
+    border-color: #f19300;
+    box-shadow: 0 0 0 0.2rem #f1950041;
+}
+
+.formulario .form-floating label {
+    padding-left: 23px;
+    font-size: 0.9rem;
+    color: #3f3f3f;
+}
+
+.formulario .form-floating > .form-control:focus ~ label {
+    color: #f19500d0;
+}
+
+.formulario .form-control:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #e63946;
+    box-shadow: 0 0 0 0.2rem #e6394641;
+}
+
+.form-floating.required::after {
+    content: "*";
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    color: #f19300;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.error {
+    display: none;
+    color: #e63946;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    margin-left: 14px;
+}
+
+.form-control:invalid:not(:focus):not(:placeholder-shown) ~ .error {
+    display: block;
+}
+
+.formulario .btn-primary {
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f19300;
+    padding: 20px 50px;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.formulario .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    background-color: #d97f00;
+}
+
+.formulario .btn-enviar {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.formulario:valid .btn-enviar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---- ESTILO PAGE PORTFOLIO ---- */
+.pageportfolio {
+    background-color: #fff;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 120px;
+    gap: 30px;
+}
+
+.pageportfolio__card {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    border-radius: 30px;
+    background-color: black;
+    text-decoration: none;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.4s ease;
+}
+
+.pageportfolio__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.10);
+    z-index: 1;
+    transition: 0.4s ease;
+}
+
+.pageportfolio__card:hover::before {
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+.pageportfolio__card::after {
+    content: "+";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f19300;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.pageportfolio__card:hover::after {
+    transform: rotate(180deg) scale(1.2);
+}
+
+.portfoliocard--grande {
+    grid-row: span 3;
+}
+
+.portfoliocard--media {
+    grid-row: span 2;
+}
+
+.portfoliocard--chica {
+    grid-row: span 1;
+}
+
+.pageportfolio__card:hover {
+    transform: scale(1.03);
+}
+
+.card__texto, .card__descripcion {
+    font-family: "Montserrat", sans-serif;
+    z-index: 2;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.card__texto {
+    background-color: #fff;
+    padding: 6px 15px;
+    border-radius: 20px;
+    color: #f19300;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+}
+
+.card__descripcion {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: left;
+    max-width: 80%;
+    text-shadow: 0 0 6px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.pageportfolio__card:hover .card__texto {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.pageportfolio__card:hover .card__descripcion {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- IMAGENES DE FONDO CARDS ---- */
+.portfoliocard--laserenisima {
+    background-image: url(../img/img_clientes/laserenisima/img_portfolio_laserenisima_portada.png);
+    background-size: cover;
+    background-position: 50% 65%;
+}
+
+.portfoliocard--tromen {
+    background-image: url(../img/img_clientes/tromen/img_portfolio_tromen_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--zoetis {
+    background-image: url(../img/img_clientes/zoetis/img_portfolio_zoetis_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--clorotec {
+    background-image: url(../img/img_clientes/clorotec/img_portfolio_clorotec_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--newmont {
+    background-image: url(../img/img_clientes/newmont/img_portfolio_newmont_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--aserran {
+    background-image: url(../img/img_clientes/aserran/img_portfolio_aserran_portada.png);
+    background-size: cover;
+    background-position: 50% 75%;
+}
+
+.portfoliocard--viabariloche {
+    background-image: url(../img/img_clientes/viabariloche/img_portfolio_viabariloche_portada.png);
+    background-size: cover;
+    background-position: 50% 75%;
+}
+
+.portfoliocard--busplus {
+    background-image: url(../img/img_clientes/busplus/img_portfolio_busplus_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--tau {
+    background-image: url(../img/img_clientes/tau/img_portfolio_tau_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--laliga {
+    background-image: url(../img/img_clientes/ligaprofesionaldefutbol/img_portfolio_ligaprofesionaldefutbol_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfoliocard--expreso {
+    background-image: url(../img/img_clientes/expreso/img_portfolio_expreso_portada.png);
+    background-size: cover;
+    background-position: 50% 40%;
+}
+
+.portfoliocard--trevi {
+    background-image: url(../img/img_clientes/trevi/img_portfolio_trevi_portada.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ---- PÁGINAS CLIENTES ---- */
+.clientes__intro {
+    padding: 50px;
+}
+
+.clientes__intro__title {
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fff;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+.pageclientes {
+    background-color: #fff;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: 30px;
+}
+
+.pageclientes__card {
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.4s ease;
+}
+
+.pageclientes img, .pageclientes video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.clientescard--grande {
+    grid-row: span 3;
+}
+
+.clientescard--media {
+    grid-row: span 2;
+}
+
+.clientescard--chica {
+    grid-row: span 1;
+}
+
+.pageclientes__botones {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff;
+    padding: 0px 50px 50px 50px;
+    gap: 20px;
+}
+
+.pageclientes__button {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #f19300;
+    background: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: 1px solid #f19300;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.pageclientes__button:hover{
+    transform: scale(1.05);
+    color: #fff;
+    background-color: #f19300;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.10);
+}
