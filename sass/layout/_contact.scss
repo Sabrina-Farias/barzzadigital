@@ -1,0 +1,12 @@
+@use '../utilities/variables';
+@use '../utilities/mixing' as *;
+
+/* ---- CONTACT - ESTILO SECCIÓN FORM ---- */
+.contacto {
+    background-color: variables.$color-bco;
+    padding: 50px;
+
+        .contacto__title {
+            @include section-title(1.5rem, variables.$color-pr-gris, center);
+        }
+}

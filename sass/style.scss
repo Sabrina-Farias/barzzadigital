@@ -1,0 +1,14 @@
+@use 'base/reset';
+
+@use 'layout/header';
+@use 'layout/main';
+
+@use 'layout/home';
+@use 'layout/about_us';
+@use 'layout/portfolio';
+@use 'layout/pag_client';
+@use 'layout/contact';
+
+@use 'components/form';
+
+@use 'layout/footer';

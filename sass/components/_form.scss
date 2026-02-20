@@ -1,0 +1,71 @@
+@use '../utilities/variables';
+@use '../utilities/mixing' as *;
+
+/* ---- CONTACT - ESTILO FORM ---- */
+.formulario {
+    .form-control {
+        border-radius: 20px;
+        border: 1px solid variables.$color-pr-gris;
+        font-family: variables.$font-txt;
+
+        &:hover, &:focus {
+            border-color: variables.$color-pr-nja;
+            box-shadow: 0 0 0 0.2rem variables.$color-sec-nja_cla;
+        }
+
+        &:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: variables.$color-error;
+            box-shadow: 0 0 0 0.2rem variables.$color-error-cla;
+        }
+
+        &:invalid:not(:focus):not(:placeholder-shown) ~ .error {
+            display: block;
+        }
+    }
+
+    .error {
+        display: none;
+        color: variables.$color-error;
+        font-size: 0.9rem;
+        margin-top: 4px;
+        margin-left: 14px;
+    }   
+
+    .form-floating {
+        label {
+            padding-left: 23px;
+            font-size: 0.9rem;
+            color: variables.$color-pr-gris;        
+        }     
+    }
+
+    .form-floating > .form-control:focus ~ label {
+        color: variables.$color-pr-nja;
+    }
+
+    .required::after {
+        content: "*";
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        color: variables.$color-pr-nja;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .btn-primary {
+        @include button(variables.$color-bco, variables.$color-pr-nja, variables.$color-sec-nja_osc);
+        font-size: 1rem;
+        border: none;
+    }
+
+    .btn-enviar {
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    &:valid .btn-enviar {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

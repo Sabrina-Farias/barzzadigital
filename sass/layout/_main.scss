@@ -1,0 +1,71 @@
+@use '../utilities/variables';
+@use '../utilities/mixing' as *;
+
+/* ---- ESTILOS GENERALES ---- */
+body {
+    background-image: url(../img/img_fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+/* ---- ESTILO SECCIONES INTRO ---- */
+main {
+    .intro {
+        @include grid(repeat(2, 1fr), center, 80px 50px, 30px);
+
+        .intro__title {
+            font-family: variables.$font-titles;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 1.1;
+            align-self: center;
+            color: variables.$color-bco;
+
+            h1 {
+                span {
+                    display: block;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation: fadeUp 0.6s ease forwards;
+                    &:nth-child(1) {animation-delay:0s;}
+                    &:nth-child(2) {animation-delay:0.3s;}
+                    &:nth-child(3) {animation-delay:0.6s;}
+                    &:nth-child(4) {animation-delay:0.9s;}
+                }
+
+                .hashtag {
+                    font-size: 6rem;
+                    margin-bottom: -10px;
+                    color: #f19300;
+                }
+            }
+        }
+
+        .intro__text {
+            font-family: variables.$font-txt;
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            align-self: end;
+            color: variables.$color-bco;
+            padding-bottom: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+
+            p + p {
+                margin-top: 20px;
+            }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

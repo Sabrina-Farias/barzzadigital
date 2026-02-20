@@ -1,0 +1,53 @@
+@use 'variables';
+
+@mixin flex($direction, $align, $justify, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin grid($template, $align, $padding, $gap) {
+    display: grid;
+    grid-template-columns: $template;
+    align-items: $align;
+    padding: $padding;
+    gap: $gap;
+}
+
+@mixin section-title($font-size, $color, $text-align) {
+    font-family: variables.$font-titles;
+    font-weight: 400;
+    font-size: $font-size,;
+    color: $color;
+    text-align: $text-align;
+}
+
+@mixin smooth-transition {
+    transition: all .3s ease;
+}
+
+@mixin button($color-tipo, $color-fondo, $color-fondo-hover) {
+    text-decoration: none;
+    font-family: variables.$font-txt;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $color-tipo;
+    background-color: $color-fondo;
+    padding: 20px 50px;
+    border-radius: 50px;
+    @include smooth-transition;
+        
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.30);
+        background-color: $color-fondo-hover;
+    }
+}
+
+@mixin portfolio-card-bg($ruta, $position) {
+    background-image: url($ruta);
+    background-size: cover;
+    background-position: $position;
+}

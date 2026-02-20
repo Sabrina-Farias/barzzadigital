@@ -1,0 +1,82 @@
+@use '../utilities/variables';
+@use '../utilities/mixing' as *;
+
+/* ---- ABOUT US - ESTILO NUESTRO EQUIPO ---- */
+.equipo {
+    background-color: variables.$color-bco;
+    padding: 50px;
+
+    .equipo__title {
+        @include section-title(1.5rem, variables.$color-pr-gris, center);
+    }
+
+    .equipo__cards {
+        @include grid(repeat(4, 1fr), stretch, 0px, 40px);
+
+        .equipo__card {
+            background-image: url(../img/img_fondo-cards.png);
+            background-size: cover;
+            background-position: center;
+            padding: 40px 30px;
+            display: flex;
+            @include smooth-transition;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            img {
+                width: 180px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .equipo__card--info {
+                h3 {
+                    font-family: variables.$font-txt;
+                    font-weight: 800;
+                    font-size: 1.7rem;
+                    color: variables.$color-pr-nja;
+                }
+
+                p {
+                    font-family: variables.$font-txt;
+                    font-weight: 500;
+                    font-size: 1.3rem;
+                    color: variables.$color-pr-gris;
+                }
+
+                p + p {
+                    font-family: variables.$font-txt;
+                    font-style: italic;
+                    font-weight: 400;
+                    font-size: 0.85rem;
+                    color: variables.$color-pr-gris;
+                }
+            }
+        }
+
+        .card--grande {
+            grid-column: span 2;
+            margin-top: 30px;
+            border-radius: 90px 180px 20px 90px;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .card--invertida {
+            flex-direction: row-reverse;
+            border-radius: 180px 90px 90px 20px;
+            text-align: right;
+        }
+
+        .card--chica {
+            flex-direction: column;
+            border-radius: 90px 90px 20px 90px;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+    }
+}

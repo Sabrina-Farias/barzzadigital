@@ -1,0 +1,150 @@
+@use '../utilities/variables';
+@use '../utilities/mixing' as *;
+
+/* ---- PORTFOLIO - ESTILO CLIENTES ---- */
+.pageportfolio {
+    background-color: variables.$color-bco;
+    @include grid(repeat(4, 1fr), null, 50px, 30px);
+    grid-auto-rows: 120px;
+
+    .pageportfolio__card{
+        @include flex(null, flex-end, flex-start,0px);
+        position: relative;
+        overflow: hidden;
+        padding: 25px;
+        border-radius: 30px;
+        background-color: variables.$color-ngr;
+        text-decoration: none;
+        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+        @include smooth-transition;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.10);
+            z-index: 1;
+            @include smooth-transition;
+        }
+
+        &:hover::before {
+            background-color: rgba(0, 0, 0, 0.70);
+        }
+
+        &:after {
+            content: "+";
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: variables.$color-pr-nja;
+            color: variables.$color-bco;
+            @include flex(null, center, center, 0px);
+            font-family: variables.$font-txt;
+            font-weight: 700;
+            box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+            z-index: 2;
+            @include smooth-transition;
+        }
+
+        &:hover::after {
+            transform: rotate(180deg) scale(1.2);
+        }
+
+        .card__texto, .card__descripcion {
+            font-family: variables.$font-txt;
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            z-index: 2;
+            @include smooth-transition;
+        }
+
+        .card__texto {
+            background-color: variables.$color-bco;
+            padding: 6px 15px;
+            border-radius: 20px;
+            color: variables.$color-pr-nja;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: left;
+            box-shadow: 0 0px 15px rgba(0, 0, 0, 0.35);
+        }
+
+        &:hover .card__texto {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .card__descripcion {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: variables.$color-bco;
+            text-align: left;
+            max-width: 80%;
+            text-shadow: 0 0 6px rgba(0,0,0,0.4);
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        &:hover .card__descripcion {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ---- TAMAÑOS CARDS ---- */
+    .portfoliocard--grande {
+        grid-row: span 3;
+    }
+    .portfoliocard--media {
+        grid-row: span 2;
+    }
+    .portfoliocard--chica {
+        grid-row: span 1;
+    }
+
+    /* ---- IMG DE FONDO CARDS ---- */
+    .portfoliocard--laserenisima {
+        @include portfolio-card-bg("../img/img_clientes/laserenisima/img_portfolio_laserenisima_portada.png", 50% 65%);
+    }
+    .portfoliocard--tromen {
+        @include portfolio-card-bg("../img/img_clientes/tromen/img_portfolio_tromen_portada.png", center);
+    }
+    .portfoliocard--zoetis {
+        @include portfolio-card-bg("../img/img_clientes/zoetis/img_portfolio_zoetis_portada.png", center);
+    }
+    .portfoliocard--clorotec {
+        @include portfolio-card-bg("../img/img_clientes/clorotec/img_portfolio_clorotec_portada.png", center);
+    }
+    .portfoliocard--newmont {
+        @include portfolio-card-bg("../img/img_clientes/newmont/img_portfolio_newmont_portada.png", center);
+    }
+    .portfoliocard--aserran {
+        @include portfolio-card-bg("../img/img_clientes/aserran/img_portfolio_aserran_portada.png", 50% 75%);
+    }
+    .portfoliocard--viabariloche {
+        @include portfolio-card-bg("../img/img_clientes/viabariloche/img_portfolio_viabariloche_portada.png", 50% 75%);
+    }
+    .portfoliocard--busplus {
+        @include portfolio-card-bg("../img/img_clientes/busplus/img_portfolio_busplus_portada.png", center);
+    }
+    .portfoliocard--tau {
+        @include portfolio-card-bg("../img/img_clientes/tau/img_portfolio_tau_portada.png", center);
+    }
+    .portfoliocard--laliga {
+        @include portfolio-card-bg("../img/img_clientes/ligaprofesionaldefutbol/img_portfolio_ligaprofesionaldefutbol_portada.png", center);
+    }
+    .portfoliocard--expreso {
+        @include portfolio-card-bg("../img/img_clientes/expreso/img_portfolio_expreso_portada.png", 50% 40%);
+    }
+    .portfoliocard--trevi {
+        @include portfolio-card-bg("../img/img_clientes/trevi/img_portfolio_trevi_portada.png", center);
+    }
+}

@@ -1,0 +1,48 @@
+@use '../utilities/variables';
+@use '../utilities/mixing' as *;
+
+/* ---- ESTILO HEADER ---- */
+header {
+    @include grid(1fr 2fr, center, 40px, 0px);
+    background-color: variables.$color-bco;
+    
+    .header__logo img {
+    max-height: 40px;
+    width: auto;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+
+        .header__navbar__pages {
+        display: flex;
+        list-style: none;
+        gap: 70px;
+        }
+
+        ul {
+            .header__navbar__link {
+                font-family: variables.$font-txt;
+                text-decoration: none;
+                font-weight: 400;
+                font-size: 1.4em;
+                color: variables.$color-pr-gris;
+                padding: 10px 25px;
+                border-top: 2.5px solid transparent;
+
+                &:hover {
+                    border-top-color:variables.$color-pr-gris;
+                }
+
+                &:focus-visible, &:active {
+                    background-color: variables.$color-sec-gris_cla;
+                }
+            }
+
+            .header__navbar__link--activo {
+            border-top-color: variables.$color-sec-gris_cla;
+            }
+        }
+    }
+}
