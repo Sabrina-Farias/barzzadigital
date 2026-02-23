@@ -148,7 +148,7 @@
         @include portfolio-card-bg("../img/img_clientes/trevi/img_portfolio_trevi_portada.png", center);
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         grid-template-columns: repeat(2, 1fr);;
         gap: 15px;
         grid-auto-rows: 100px;
@@ -186,6 +186,16 @@
                 opacity: 1;
                 left: 20px;
                 bottom: 25px;
+            }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
+
+        .pageportfolio__card {
+            &:after {
+                opacity: 0;
             }
         }
     }

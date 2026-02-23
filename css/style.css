@@ -78,7 +78,7 @@ header .navbar .navbar-toggler[aria-expanded=true] .navbar-toggler-icon::after {
   transform: rotate(-45deg);
   top: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   header .navbar .navbar-nav {
     margin-top: 30px;
     padding-top: 20px;
@@ -89,9 +89,17 @@ header .navbar .navbar-toggler[aria-expanded=true] .navbar-toggler-icon::after {
     justify-content: space-around;
     align-items: center;
   }
+  header .navbar .navbar-nav .nav-link:hover, header .navbar .navbar-nav .nav-link:focus-visible, header .navbar .navbar-nav .nav-link:active {
+    opacity: 0;
+  }
   header .navbar .navbar-nav .nav-link.active {
     border: none;
     color: #f19300;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    padding: 40px 20px;
   }
 }
 
@@ -165,7 +173,7 @@ main .intro .intro__text p + p {
     transform: translateY(0);
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   main .intro {
     display: grid;
     grid-template-columns: 1fr;
@@ -178,6 +186,11 @@ main .intro .intro__text p + p {
   }
   main .intro .intro__text {
     font-size: 1.2rem;
+  }
+}
+@media (max-width: 500px) {
+  main .intro {
+    padding: 40px 25px;
   }
 }
 
@@ -233,7 +246,7 @@ main .intro .intro__text p + p {
   transform: scale(1.03);
   box-shadow: 0px 0px 20px rgba(241, 147, 0, 0.1254901961);
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .services .services__cards {
     grid-template-columns: 1fr;
   }
@@ -245,6 +258,14 @@ main .intro .intro__text p + p {
   }
   .services .services__cards .services__card p {
     font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .services {
+    padding: 40px 25px;
+  }
+  .services .services__cards .services__card {
+    padding: 25px 20px;
   }
 }
 
@@ -375,7 +396,7 @@ main .intro .intro__text p + p {
 .portfolio .portfolio__slider-wrapper .portfolio__slider .portfolio__slider__item:hover::after, .portfolio .portfolio__slider-wrapper .portfolio__slider .portfolio__slider__item:hover .portfolio__slider__item-text {
   opacity: 1;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .portfolio {
     grid-template-columns: 1fr;
     padding: 60px 50px;
@@ -416,6 +437,14 @@ main .intro .intro__text p + p {
   .portfolio .portfolio__slider-wrapper .portfolio__slider .portfolio__slider__item {
     width: 130px;
     height: 240px;
+  }
+}
+@media (max-width: 500px) {
+  .portfolio {
+    padding: 40px 25px;
+  }
+  .portfolio .portfolio__slider-wrapper .portfolio__slider {
+    gap: 20px;
   }
 }
 
@@ -490,7 +519,7 @@ main .intro .intro__text p + p {
   width: fit-content;
   margin: 60px auto 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .clients {
     padding: 60px 50px;
     /* ---- SLIDER LOGOS ---- */
@@ -502,9 +531,17 @@ main .intro .intro__text p + p {
     max-height: 35px;
   }
   .clients .clients__button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 15px 35px;
     margin-top: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .clients {
+    padding: 40px 25px;
+  }
+  .clients .clients__button {
+    text-align: center;
   }
 }
 
@@ -540,7 +577,7 @@ main .intro .intro__text p + p {
   width: fit-content;
   margin: 40px auto 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .contact {
     padding: 60px 50px;
   }
@@ -554,6 +591,11 @@ main .intro .intro__text p + p {
   .contact .contact__button {
     font-size: 1.1rem;
     padding: 15px 35px;
+  }
+}
+@media (max-width: 500px) {
+  .contact {
+    padding: 40px 25px;
   }
 }
 
@@ -631,7 +673,7 @@ main .intro .intro__text p + p {
   text-align: center;
   gap: 20px;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .equipo .equipo__cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -658,6 +700,27 @@ main .intro .intro__text p + p {
   }
   .equipo .equipo__cards .card--chica {
     border-radius: 60px 60px 10px 60px;
+  }
+}
+@media (max-width: 500px) {
+  .equipo {
+    padding: 40px 25px;
+  }
+  .equipo .equipo__cards {
+    gap: 20px;
+  }
+  .equipo .equipo__cards .equipo__card img {
+    width: 100px;
+  }
+  .equipo .equipo__cards .equipo__card .equipo__card--info h3 {
+    font-size: 1rem;
+  }
+  .equipo .equipo__cards .card--grande {
+    border-radius: 60px 110px 10px 60px;
+  }
+  .equipo .equipo__cards .card--invertida {
+    border-radius: 110px 60px 60px 10px;
+    margin-top: 0px;
   }
 }
 
@@ -832,7 +895,7 @@ main .intro .intro__text p + p {
   background-size: cover;
   background-position: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .pageportfolio {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -868,6 +931,14 @@ main .intro .intro__text p + p {
     opacity: 1;
     left: 20px;
     bottom: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .pageportfolio {
+    padding: 40px 25px;
+  }
+  .pageportfolio .pageportfolio__card:after {
+    opacity: 0;
   }
 }
 
@@ -918,7 +989,7 @@ main .intro .intro__text p + p {
 .pageclientes .clientescard--chica {
   grid-row: span 1;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .pageclientes {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -926,6 +997,11 @@ main .intro .intro__text p + p {
   }
   .pageclientes .pageclientes__card {
     border-radius: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .pageclientes {
+    padding: 40px 25px;
   }
 }
 
@@ -956,7 +1032,7 @@ main .intro .intro__text p + p {
   border: 0px;
   box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .pageclientes__botones {
     justify-content: center;
     flex-wrap: wrap;
@@ -965,6 +1041,11 @@ main .intro .intro__text p + p {
     font-size: 0.7rem;
     padding: 10px 20px;
     border-radius: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .pageclientes__botones {
+    padding: 40px 25px;
   }
 }
 
@@ -979,6 +1060,11 @@ main .intro .intro__text p + p {
   font-size: 1.5rem;
   color: #3e3f3f;
   text-align: center;
+}
+@media (max-width: 500px) {
+  .contacto {
+    padding: 40px 25px;
+  }
 }
 
 /* ---- CONTACT - ESTILO FORM ---- */
@@ -1113,7 +1199,7 @@ footer .footer__copyright {
   margin-top: 30px;
   text-transform: uppercase;
 }
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   footer {
     grid-template-columns: 2fr;
   }
@@ -1135,6 +1221,11 @@ footer .footer__copyright {
   }
   footer .footer__rrss .footer__lista--horizontal img {
     width: 30px;
+  }
+}
+@media (max-width: 500px) {
+  footer {
+    padding: 40px 25px;
   }
 }
 

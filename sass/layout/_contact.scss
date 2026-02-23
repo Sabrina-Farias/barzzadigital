@@ -9,4 +9,8 @@
         .contacto__title {
             @include section-title(1.5rem, variables.$color-pr-gris, center);
         }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
+    }
 }

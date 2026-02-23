@@ -88,7 +88,7 @@ header {
         }
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         .navbar {
             .navbar-nav {
                 margin-top: 30px;
@@ -100,12 +100,23 @@ header {
                 justify-content: space-around;
                 align-items: center;
 
+                .nav-link {
+                    &:hover, &:focus-visible, &:active {
+                        opacity: 0;
+                    }
+                }
+
                 .nav-link.active {
                     border:none;
                     color: variables.$color-pr-nja;
                 }
+                
             }
         }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 20px;
     }
 }
 

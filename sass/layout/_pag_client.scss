@@ -43,7 +43,7 @@
         grid-row: span 1;
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         grid-auto-rows: 100px;
@@ -51,6 +51,10 @@
         .pageclientes__card {
             border-radius: 20px;
         } 
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
     }
 }
 
@@ -80,7 +84,7 @@
         }
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         justify-content: center;
         flex-wrap: wrap;
 
@@ -89,5 +93,9 @@
             padding: 10px 20px;
             border-radius: 30px;
         }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
     }
 }

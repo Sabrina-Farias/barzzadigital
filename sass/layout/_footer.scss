@@ -67,7 +67,7 @@ footer {
         text-transform: uppercase;
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         grid-template-columns: 2fr;
 
         .footer__contacto {
@@ -102,6 +102,9 @@ footer {
                 }
             }
         }
-        
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
     }
 }

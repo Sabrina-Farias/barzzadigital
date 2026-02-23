@@ -69,7 +69,7 @@ main {
         }
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         .intro {
             @include grid(1fr, center, 40px 50px, 30px);
 
@@ -84,6 +84,12 @@ main {
             .intro__text {
                 font-size: 1.2rem;
             }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        .intro {
+            padding: 40px 25px;
         }
     }
 }

@@ -48,7 +48,7 @@
         }
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         .services__cards {
             grid-template-columns: 1fr;
 
@@ -64,6 +64,16 @@
                 p {
                     font-size: 1rem;
                 }
+            }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
+
+        .services__cards {
+            .services__card {
+                padding: 25px 20px;
             }
         }
     }
@@ -176,7 +186,7 @@
         }
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         grid-template-columns: 1fr;
         padding: 60px 50px;
 
@@ -212,6 +222,16 @@
                     width: 130px;
                     height: 240px;
                 }
+            }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
+
+        .portfolio__slider-wrapper {
+            .portfolio__slider {
+                gap: 20px;
             }
         }
     }
@@ -270,7 +290,7 @@
         margin: 60px auto 0;
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         padding: 60px 50px;
 
         /* ---- SLIDER LOGOS ---- */
@@ -287,9 +307,17 @@
         }
 
         .clients__button {
-            font-size: 1.1rem;
+            font-size: 1rem;
             padding: 15px 35px;
             margin-top: 30px;
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
+
+        .clients__button {
+            text-align: center;
         }
     }
 }
@@ -311,7 +339,7 @@
         margin: 40px auto 0;
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         padding: 60px 50px;
         
         .contact__title {
@@ -324,5 +352,9 @@
             font-size: 1.1rem;
             padding: 15px 35px;
         }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
     }
 }

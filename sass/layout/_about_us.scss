@@ -80,7 +80,7 @@
         }
     }
 
-    @media (max-width: variables.$mobile) {
+    @media (max-width: variables.$tablet) {
         .equipo__cards {
             grid-template-columns: repeat(2, 1fr);;
             gap: 30px;
@@ -117,6 +117,35 @@
 
             .card--chica {
                 border-radius: 60px 60px 10px 60px;
+            }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 40px 25px;
+
+        .equipo__cards {
+            gap: 20px;
+
+            .equipo__card {
+                img {
+                    width: 100px;
+                }
+
+                .equipo__card--info {
+                    h3 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .card--grande {
+                border-radius: 60px 110px 10px 60px;
+            }
+
+            .card--invertida {
+                border-radius: 110px 60px 60px 10px;
+                margin-top: 0px;                
             }
         }
     }
