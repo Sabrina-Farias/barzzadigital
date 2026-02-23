@@ -47,6 +47,26 @@
             }
         }
     }
+
+    @media (max-width: variables.$mobile) {
+        .services__cards {
+            grid-template-columns: 1fr;
+
+            .services__card {
+                img {
+                    width: 100px;
+                }
+
+                h3 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
 }
 
 /* ---- HOME - ESTILO SECCIÓN PORTFOLIO ---- */
@@ -155,6 +175,46 @@
             }
         }
     }
+
+    @media (max-width: variables.$mobile) {
+        grid-template-columns: 1fr;
+        padding: 60px 50px;
+
+        .portfolio__content {
+            display: contents;
+            
+            .portfolio__title { order: 1; }
+            .portfolio__text { order: 2; }
+            .portfolio__slider-wrapper { order: 3; }
+            .portfolio__button { order: 4; justify-self: start; width: auto;}
+
+            .portfolio__content-top {
+                .portfolio__text {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .portfolio__button {
+                font-size: 1.1rem;
+                padding: 15px 35px;
+            }
+        }
+
+        .portfolio__slider-wrapper {
+            .portfolio__slider {
+                scrollbar-width: none;
+                &:-webkit-scrollbar {
+                    display: none;
+                }
+
+                /* ---- CARDS ---- */
+                .portfolio__slider__item {
+                    width: 130px;
+                    height: 240px;
+                }
+            }
+        }
+    }
 }
 
 /* ---- HOME - ESTILO SECCIÓN CLIENTES ---- */
@@ -209,6 +269,29 @@
         width: fit-content;
         margin: 60px auto 0;
     }
+
+    @media (max-width: variables.$mobile) {
+        padding: 60px 50px;
+
+        /* ---- SLIDER LOGOS ---- */
+        .clients__slider {
+            .clients__slider-track {
+                .clients__logo {
+                    margin: 0 10px;
+
+                    img {
+                        max-height: 35px;
+                    }
+                }
+            }
+        }
+
+        .clients__button {
+            font-size: 1.1rem;
+            padding: 15px 35px;
+            margin-top: 30px;
+        }
+    }
 }
 
 /* ---- HOME - ESTILO SECCIÓN CONTACTANOS ---- */
@@ -226,5 +309,20 @@
         display: block;
         width: fit-content;
         margin: 40px auto 0;
+    }
+
+    @media (max-width: variables.$mobile) {
+        padding: 60px 50px;
+        
+        .contact__title {
+            h2 {
+                @include section-title(3rem, variables.$color-bco, center)
+            }
+        }
+
+        .contact__button {
+            font-size: 1.1rem;
+            padding: 15px 35px;
+        }
     }
 }

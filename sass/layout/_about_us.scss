@@ -79,4 +79,45 @@
             gap: 20px;
         }
     }
+
+    @media (max-width: variables.$mobile) {
+        .equipo__cards {
+            grid-template-columns: repeat(2, 1fr);;
+            gap: 30px;
+
+            .equipo__card {
+                img {
+                    width: 120px;
+                }
+
+                .equipo__card--info {
+                    h3 {
+                        font-size: 1.1rem;
+                    }
+
+                    p {
+                        font-size: 0.9rem;
+                    }
+
+                    p + p {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            .card--grande {
+                border-radius: 60px 130px 10px 60px;
+                gap: 20px;
+            }
+
+            .card--invertida {
+                border-radius: 130px 60px 60px 10px;
+                margin-top: 0px;                
+            }
+
+            .card--chica {
+                border-radius: 60px 60px 10px 60px;
+            }
+        }
+    }
 }

@@ -38,7 +38,7 @@ main {
                 .hashtag {
                     font-size: 6rem;
                     margin-bottom: -10px;
-                    color: #f19300;
+                    color: variables.$color-pr-nja;
                 }
             }
         }
@@ -65,6 +65,24 @@ main {
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        .intro {
+            @include grid(1fr, center, 40px 50px, 30px);
+
+            .intro__title {
+                h1 {
+                    .hashtag {
+                        font-size: 5rem;
+                    }
+                }
+            }
+
+            .intro__text {
+                font-size: 1.2rem;
             }
         }
     }

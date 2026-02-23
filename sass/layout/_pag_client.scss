@@ -42,6 +42,16 @@
     .clientescard--chica {
         grid-row: span 1;
     }
+
+    @media (max-width: variables.$mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        grid-auto-rows: 100px;
+
+        .pageclientes__card {
+            border-radius: 20px;
+        } 
+    }
 }
 
 .pageclientes__botones {
@@ -67,6 +77,17 @@
             background-color: variables.$color-pr-nja;
             border: 0px;
             box-shadow: 0 0px 15px rgba(0, 0, 0, 0.10);
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .pageclientes__button {
+            font-size: 0.7rem;
+            padding: 10px 20px;
+            border-radius: 30px;
         }
     }
 }

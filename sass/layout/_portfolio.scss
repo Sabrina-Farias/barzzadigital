@@ -147,4 +147,46 @@
     .portfoliocard--trevi {
         @include portfolio-card-bg("../img/img_clientes/trevi/img_portfolio_trevi_portada.png", center);
     }
+
+    @media (max-width: variables.$mobile) {
+        grid-template-columns: repeat(2, 1fr);;
+        gap: 15px;
+        grid-auto-rows: 100px;
+
+        .pageportfolio__card {
+            justify-items: center;
+            padding: 20px;
+            border-radius: 20px;
+
+            &:before {
+                background-color: rgba(0, 0, 0, 0.40);
+            }
+
+            &:after {
+                content: "+";
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                width: 26px;
+                height: 26px;
+            }
+
+            .card__texto {
+                padding: 6px 15px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                top: 12px;
+                left: 12px;
+                bottom: auto;
+            }
+
+            .card__descripcion {
+                font-size: 0.6rem;
+                max-width: 75%;
+                opacity: 1;
+                left: 20px;
+                bottom: 25px;
+            }
+        }
+    }
 }

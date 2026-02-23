@@ -20,18 +20,33 @@
 <body>
 <!---- INICIO DEL HEADER---->
     <header>
-        <div class="header__logo">
-            <a href="../../index.html">
-                <img src="../../img/img_logo_header.png" alt="Logo Barzza">
-            </a>
-        </div>
-        <nav>
-            <ul class="header__navbar__pages">
-                <li><a href="../../index.html" class="header__navbar__link">Inicio</a></li>
-                <li><a href="../about_us.html" class="header__navbar__link">Nosotros</a></li>
-                <li><a href="../portfolio.html" class="header__navbar__link header__navbar__link--activo">Portfolio</a></li>
-                <li><a href="../contact.html" class="header__navbar__link">Contactanos</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../img/img_logo_header.png" alt="Logo Barzza">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../about_us.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../contact.html">Contactanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 

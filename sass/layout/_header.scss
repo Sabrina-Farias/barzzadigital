@@ -3,28 +3,20 @@
 
 /* ---- ESTILO HEADER ---- */
 header {
-    @include grid(1fr 2fr, center, 40px, 0px);
+    padding: 30px;
     background-color: variables.$color-bco;
     
-    .header__logo img {
-    max-height: 40px;
-    width: auto;
-    }
-
-    nav {
-        display: flex;
-        justify-content: flex-end;
-
-        .header__navbar__pages {
-        display: flex;
-        list-style: none;
-        gap: 70px;
+    .navbar {
+        .navbar-brand img {
+            max-height: 40px;
+            width: auto;
         }
 
-        ul {
-            .header__navbar__link {
+        .navbar-nav {
+            gap: 70px;
+
+            .nav-link {
                 font-family: variables.$font-txt;
-                text-decoration: none;
                 font-weight: 400;
                 font-size: 1.4em;
                 color: variables.$color-pr-gris;
@@ -35,14 +27,85 @@ header {
                     border-top-color:variables.$color-pr-gris;
                 }
 
-                &:focus-visible, &:active {
-                    background-color: variables.$color-sec-gris_cla;
+                &:focus-visible, &:active { 
+                    background-color: variables.$color-sec-gris_cla; 
                 }
             }
 
-            .header__navbar__link--activo {
-            border-top-color: variables.$color-sec-gris_cla;
+            .nav-link.active {
+                    border-top-color: variables.$color-sec-gris_cla;
+            }
+        }
+
+        .navbar-toggler {
+            border: none;
+            &:focus {
+                box-shadow: none;
+            }
+
+            .navbar-toggler-icon {
+                background-image: none;
+                width: 24px;
+                height: 2px;
+                background-color: variables.$color-pr-nja;
+                position: relative;
+                display: block;
+
+                &::before, &::after {
+                    content: "";
+                    width: 24px;
+                    height: 2px;
+                    background-color: variables.$color-pr-nja;
+                    position: absolute;
+                    left: 0;
+                    @include smooth-transition;
+                }
+
+                &::before {
+                    top: -8px;
+                }
+
+                &::after {
+                    top: 8px;
+                }
+            }
+        }
+
+        .navbar-toggler[aria-expanded="true"] {
+            .navbar-toggler-icon {
+                background-color: transparent;
+
+                &::before { 
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: variables.$mobile) {
+        .navbar {
+            .navbar-nav {
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 2px solid variables.$color-pr-nja;
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                justify-content: space-around;
+                align-items: center;
+
+                .nav-link.active {
+                    border:none;
+                    color: variables.$color-pr-nja;
+                }
             }
         }
     }
 }
+
